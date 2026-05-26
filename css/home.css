@@ -160,6 +160,66 @@
 }
 
 /* =============================================
+   PHOTO BANNER
+   ============================================= */
+
+.photo-banner {
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  position: relative;
+  background: #1E1A1B;
+}
+
+.photo-banner::before,
+.photo-banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.photo-banner::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(30, 26, 27, 0.5), transparent);
+}
+
+.photo-banner::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(30, 26, 27, 0.5), transparent);
+}
+
+.banner-track {
+  display: flex;
+  width: max-content;
+  height: 100%;
+  animation: banner-scroll 40s linear infinite;
+  will-change: transform;
+}
+
+.banner-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes banner-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.banner-track img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  object-position: center;
+  flex-shrink: 0;
+  margin-right: 8px;
+  display: block;
+}
+
+/* =============================================
    OUR STORY TEASER
    ============================================= */
 
@@ -317,6 +377,17 @@
 /* =============================================
    RESPONSIVE — HOME
    ============================================= */
+
+@media (max-width: 768px) {
+  .photo-banner {
+    height: 260px;
+  }
+
+  .photo-banner::before,
+  .photo-banner::after {
+    width: 60px;
+  }
+}
 
 @media (max-width: 960px) {
   .hero::before {
