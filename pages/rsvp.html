@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RSVP to Alex and Graeme's wedding on July 31, 2027 at The Fort Garry Hotel, Winnipeg.">
+  <title>RSVP — Alex &amp; Graeme · July 31, 2027</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    /* RSVP form styles */
+    .rsvp-section {
+      padding: var(--section-pad) 0;
+      background-color: var(--ivory);
+    }
+
+    .rsvp-form-wrap {
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 1.75rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: var(--font-sc);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      margin-bottom: 0.6rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--charcoal);
+      background-color: var(--warm-cream);
+      border: 1px solid rgba(30, 26, 27, 0.18);
+      border-radius: 0;
+      appearance: none;
+      -webkit-appearance: none;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--burgundy);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .form-note {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 0.875rem;
+      color: var(--charcoal);
+      opacity: 0.55;
+      margin-top: 0.4rem;
+    }
+
+    .form-submit {
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+
+    .form-submit p {
+      font-style: italic;
+      font-size: 0.875rem;
+      color: var(--charcoal);
+      opacity: 0.5;
+      margin-top: 1rem;
+    }
+
+    .rsvp-notice {
+      background-color: var(--warm-cream);
+      border: 1px solid rgba(107, 26, 43, 0.12);
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .rsvp-notice p {
+      font-family: var(--font-sc);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+    }
+
+    @media (max-width: 600px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav" id="site-nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Alex &amp; Graeme</a>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" role="list">
+        <li><a href="/pages/our-story.html">Our Story</a></li>
+        <li><a href="/pages/wedding-party.html">Wedding Party</a></li>
+        <li><a href="/pages/schedule.html">Schedule</a></li>
+        <li><a href="/pages/travel.html">Travel &amp; Stay</a></li>
+        <li><a href="/pages/registry.html">Registry</a></li>
+        <li><a href="/pages/things-to-do.html">Things To Do</a></li>
+        <li><a href="/pages/faq.html">FAQs</a></li>
+        <li class="nav-rsvp"><a href="/pages/rsvp.html">RSVP</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-eyebrow">We Hope to See You There</span>
+      <h1 class="page-title">RSVP</h1>
+      <div class="ornament-divider" aria-hidden="true">
+        <span class="line"></span>
+        <span class="gem">◆ ◆ ◆</span>
+        <span class="line"></span>
+      </div>
+      <p class="page-subtitle">Kindly respond by May 31, 2027</p>
+    </div>
+  </section>
+
+  <section class="rsvp-section">
+    <div class="container">
+      <div class="rsvp-form-wrap">
+
+        <div class="rsvp-notice">
+          <p>Please submit one form per guest &middot; Deadline: May 31, 2027</p>
+        </div>
+
+        <form action="#" method="post" novalidate>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" name="first_name" required autocomplete="given-name">
+            </div>
+            <div class="form-group">
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" name="last_name" required autocomplete="family-name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label for="attending">Will you be attending?</label>
+            <select id="attending" name="attending" required>
+              <option value="" disabled selected>Please select&hellip;</option>
+              <option value="yes">Joyfully accepts</option>
+              <option value="no">Regretfully declines</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="meal">Meal Preference</label>
+            <select id="meal" name="meal">
+              <option value="" disabled selected>Please select&hellip;</option>
+              <option value="chicken">Chicken</option>
+              <option value="fish">Fish</option>
+              <option value="vegetarian">Vegetarian</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="dietary">Dietary Requirements or Allergies</label>
+            <textarea id="dietary" name="dietary" rows="3" placeholder="Please list any allergies or dietary restrictions&hellip;"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="notes">Message for Alex &amp; Graeme <span class="form-note">(optional)</span></label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Leave a note for the happy couple&hellip;"></textarea>
+          </div>
+
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary">Send RSVP</button>
+            <p>A form backend is not yet connected &mdash; responses will be wired up before invitations are sent.</p>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <img src="/assets/icons/monogram.png" alt="A&amp;G" class="footer-monogram" width="56" height="56">
+      <p class="footer-names">Alex &amp; Graeme</p>
+      <p class="footer-date">July 31, 2027 &middot; Winnipeg, Manitoba</p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/pages/our-story.html">Our Story</a>
+        <a href="/pages/wedding-party.html">Wedding Party</a>
+        <a href="/pages/schedule.html">Schedule</a>
+        <a href="/pages/travel.html">Travel &amp; Stay</a>
+        <a href="/pages/registry.html">Registry</a>
+        <a href="/pages/things-to-do.html">Things To Do</a>
+        <a href="/pages/faq.html">FAQs</a>
+        <a href="/pages/rsvp.html">RSVP</a>
+      </nav>
+      <p class="footer-copy">Made with love &middot; &copy; 2027 Alex &amp; Graeme</p>
+    </div>
+  </footer>
+
+  <script src="/js/nav.js"></script>
+
+</body>
+</html>

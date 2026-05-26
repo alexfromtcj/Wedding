@@ -1,0 +1,523 @@
+/* =============================================================
+   GLOBAL STYLES — Alex & Graeme Wedding
+   alexandgraeme.com
+   ============================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cormorant+SC:wght@300;400;600&display=swap');
+
+@font-face {
+  font-family: 'Motterdam';
+  src: url('../assets/fonts/Motterdam.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Strong2';
+  src: url('../assets/fonts/Strong 2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =============================================
+   VARIABLES
+   ============================================= */
+
+:root {
+  --burgundy:    #6B1A2B;
+  --crimson:     #8B1A2E;
+  --wine:        #9B3A4A;
+  --forest-sage: #4A5E3A;
+  --light-sage:  #7A9165;
+  --ivory:       #F5F0E8;
+  --warm-cream:  #EDE5D8;
+  --dusty-rose:  #C4848A;
+  --charcoal:    #1E1A1B;
+
+  --font-script:  'Motterdam', cursive;
+  --font-display: 'Strong2', serif;
+  --font-body:    'Cormorant Garamond', Georgia, serif;
+  --font-sc:      'Cormorant SC', Georgia, serif;
+
+  --nav-height:    72px;
+  --container-max: 1100px;
+  --section-pad:   100px;
+}
+
+/* =============================================
+   RESET & BASE
+   ============================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--charcoal);
+  background-color: var(--ivory);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =============================================
+   LAYOUT
+   ============================================= */
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* =============================================
+   TYPOGRAPHY
+   ============================================= */
+
+.section-eyebrow {
+  font-family: var(--font-sc);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.section-header h2 {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: normal;
+  color: var(--charcoal);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+
+/* =============================================
+   BUTTONS
+   ============================================= */
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2.75rem;
+  font-family: var(--font-sc);
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  border: none;
+  line-height: 1;
+}
+
+.btn-primary {
+  background-color: var(--burgundy);
+  color: var(--ivory);
+}
+
+.btn-primary:hover {
+  background-color: var(--wine);
+  transform: translateY(-2px);
+}
+
+.btn-primary-light {
+  background-color: var(--ivory);
+  color: var(--burgundy);
+}
+
+.btn-primary-light:hover {
+  background-color: var(--warm-cream);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--burgundy);
+  border: 1px solid var(--burgundy);
+}
+
+.btn-outline:hover {
+  background-color: var(--burgundy);
+  color: var(--ivory);
+  transform: translateY(-2px);
+}
+
+/* =============================================
+   ORNAMENT DIVIDER  ── ◆ ──
+   ============================================= */
+
+.ornament-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.875rem;
+  margin: 1.25rem auto;
+}
+
+.ornament-divider .line {
+  width: 56px;
+  height: 1px;
+  background-color: var(--burgundy);
+  opacity: 0.3;
+}
+
+.ornament-divider .gem {
+  color: var(--burgundy);
+  font-size: 0.45rem;
+  opacity: 0.65;
+  letter-spacing: 0.25em;
+}
+
+/* =============================================
+   BOTANICAL SECTION DIVIDER
+   ============================================= */
+
+.botanical-divider {
+  display: flex;
+  justify-content: center;
+  padding: 2.5rem 0;
+}
+
+.botanical-divider__inner {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  width: 280px;
+}
+
+.botanical-divider__line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--light-sage) 40%, var(--light-sage) 60%, transparent);
+  opacity: 0.55;
+}
+
+.botanical-divider__motif {
+  color: var(--light-sage);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* =============================================
+   NAVIGATION
+   ============================================= */
+
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: background 0.35s ease, box-shadow 0.35s ease;
+}
+
+.site-nav.scrolled {
+  background: rgba(245, 240, 232, 0.97);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 1px 0 rgba(30, 26, 27, 0.08);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+  padding: 0 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.nav-logo {
+  font-family: var(--font-script);
+  font-size: 1.75rem;
+  color: var(--charcoal);
+  white-space: nowrap;
+  transition: color 0.2s;
+  flex-shrink: 0;
+}
+
+.nav-logo:hover {
+  color: var(--burgundy);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 0;
+}
+
+.nav-menu li a {
+  font-family: var(--font-sc);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  padding: 0.5rem 0.7rem;
+  display: block;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+  color: var(--burgundy);
+}
+
+.nav-menu .nav-rsvp a {
+  background-color: var(--burgundy);
+  color: var(--ivory);
+  padding: 0.5rem 1.25rem;
+  margin-left: 0.5rem;
+}
+
+.nav-menu .nav-rsvp a:hover {
+  background-color: var(--wine);
+  color: var(--ivory);
+}
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background-color: var(--charcoal);
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.nav-hamburger.active span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.nav-hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.nav-hamburger.active span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* =============================================
+   PAGE HERO (inner pages)
+   ============================================= */
+
+.page-hero {
+  background-color: var(--warm-cream);
+  padding: calc(var(--nav-height) + 5rem) 0 5rem;
+  text-align: center;
+  position: relative;
+}
+
+.page-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(107,26,43,0.15), transparent);
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 6vw, 3.75rem);
+  font-weight: normal;
+  color: var(--charcoal);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.page-subtitle {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--wine);
+  margin-top: 0.75rem;
+}
+
+/* =============================================
+   CONTENT PLACEHOLDER
+   ============================================= */
+
+.page-content {
+  padding: var(--section-pad) 0;
+}
+
+.coming-soon {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 4rem 2.5rem;
+  border: 1px solid rgba(107, 26, 43, 0.12);
+  background-color: var(--warm-cream);
+}
+
+.coming-soon p {
+  font-style: italic;
+  color: var(--wine);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+
+.site-footer {
+  background-color: var(--warm-cream);
+  padding: 5rem 0 2.5rem;
+  text-align: center;
+  border-top: 1px solid rgba(30, 26, 27, 0.07);
+}
+
+.footer-monogram {
+  width: 56px;
+  margin: 0 auto 1.5rem;
+  opacity: 0.6;
+}
+
+.footer-names {
+  font-family: var(--font-script);
+  font-size: 2.25rem;
+  color: var(--charcoal);
+  margin-bottom: 0.35rem;
+  line-height: 1.2;
+}
+
+.footer-date {
+  font-family: var(--font-sc);
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--wine);
+  margin-bottom: 2.5rem;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 1.25rem;
+  margin-bottom: 3rem;
+}
+
+.footer-nav a {
+  font-family: var(--font-sc);
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  opacity: 0.5;
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.footer-nav a:hover {
+  opacity: 1;
+  color: var(--burgundy);
+}
+
+.footer-copy {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--charcoal);
+  opacity: 0.35;
+  font-style: italic;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 960px) {
+  :root {
+    --section-pad: 70px;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: rgba(245, 240, 232, 0.98);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.75rem 0 1.5rem;
+    box-shadow: 0 6px 24px rgba(30, 26, 27, 0.1);
+    border-top: 1px solid rgba(30, 26, 27, 0.06);
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu li a {
+    padding: 0.875rem 2rem;
+    font-size: 0.78rem;
+  }
+
+  .nav-menu .nav-rsvp a {
+    margin: 0.75rem 2rem 0;
+    text-align: center;
+    padding: 0.875rem 1.25rem;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --section-pad: 56px;
+  }
+
+  .container {
+    padding: 0 1.25rem;
+  }
+}
