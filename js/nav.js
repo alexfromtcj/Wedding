@@ -7,7 +7,7 @@
 
   // On inner pages (no .hero), always show solid nav
   function onScroll() {
-    if (!document.querySelector('.hero') || window.scrollY > 20) {
+    if (!document.querySelector('.hero') || window.scrollY > 50) {
       nav.classList.add('scrolled');
     } else {
       nav.classList.remove('scrolled');
