@@ -271,6 +271,24 @@ a {
   margin: 0 auto;
 }
 
+.nav-home {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: 0.5rem;
+  line-height: 0;
+}
+
+.nav-home img {
+  height: 64px;
+  width: auto;
+  max-width: none;
+}
+
+.monogram-btn:hover {
+  filter: brightness(0) saturate(100%) invert(38%) sepia(18%) saturate(600%) hue-rotate(63deg) brightness(85%);
+}
+
 .nav-logo {
   font-family: var(--font-script);
   font-size: 1.75rem;
