@@ -9,27 +9,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="../css/styles.css">
   <style>
-    .placeholder-section {
-      padding: var(--section-pad) 0;
-      background-color: var(--warm-cream);
-      min-height: 400px;
+    .page-hero--compact {
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-top: 20px;
+      padding-bottom: 20px;
     }
 
-    .placeholder-section p {
-      font-family: var(--font-body);
-      font-style: italic;
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--charcoal);
-      opacity: 0.5;
-      text-align: center;
+    .page-hero--compact::after {
+      display: none;
     }
 
-    .monogram-btn:hover {
-      filter: brightness(0) saturate(100%) invert(72%) sepia(18%) saturate(600%) hue-rotate(314deg) brightness(98%);
+    @media (max-width: 767px) {
+      .carousel-dots {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -37,7 +35,7 @@
 
   <nav class="site-nav" id="site-nav">
     <div class="nav-container">
-      <a href="../index.html" class="nav-home" aria-label="Home"><img src="../assets/icons/monogram.png" alt="" class="monogram-btn" style="filter: brightness(0) invert(1); transition: filter 0.2s ease;"></a>
+      <a href="../index.html" class="nav-home" aria-label="Home"><img src="../assets/icons/monogram.png" alt="" class="monogram-btn"></a>
 <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -55,46 +53,182 @@
     </div>
   </nav>
 
-  <section class="page-hero">
-    <div class="container">
-      <span class="section-eyebrow">Our Journey</span>
-      <h1 class="page-title">Our Story</h1>
-      <div class="ornament-divider" aria-hidden="true">
-        <span class="line"></span>
-        <span class="gem">◆ ◆ ◆</span>
-        <span class="line"></span>
+  <section class="photo-carousel-section photo-carousel-section--leading">
+    <div class="photo-carousel photo-carousel--portrait" data-carousel aria-label="Vertical photos of Alex and Graeme">
+      <div class="carousel-viewport">
+        <ul class="carousel-track" role="list">
+          <li class="carousel-slide"><img src="../assets/photos/couple/FullSizeRender.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/35051904_10155369894702382_8746671993174097920_n.jpg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/468302003_10160155953487382_2412177898373794188_n.jpg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/469021839_10160313341882382_8955269711945257416_n.jpg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/471494087_10160362708592382_2614798233738501790_n.jpg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/471569966_10160370014707382_1806500151486778363_n.jpg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/507634396_10160895824387382_5813182142422540005_n.jpg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/67063604552__A4B10DA3-3033-434A-BD66-928948FDF7C2.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/6E983C36-6794-4247-9C71-725A266D8AB3.jpg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/DSCF0166.JPG" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_0434.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_0593.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_0661.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_1089.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_1374.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_1672.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_1873.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_2196.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_2233.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_2273.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_2571.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_2736.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_3451.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_3993.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_4093.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_4604.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_4773.JPG" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_5268.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_5812.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_5963.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_6312.JPG" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_6695.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_6901.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_7622.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_7903.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_7950.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_7983.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_8750.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_9233.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_9582.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+        </ul>
       </div>
-      <p class="page-subtitle">Coming soon</p>
+      <button type="button" class="carousel-arrow carousel-arrow-prev" aria-label="Previous photo">&#10094;</button>
+      <button type="button" class="carousel-arrow carousel-arrow-next" aria-label="Next photo">&#10095;</button>
+      <div class="carousel-dots" role="tablist" aria-label="Photo navigation"></div>
     </div>
   </section>
 
-  <section class="placeholder-section">
+  <section class="page-hero page-hero--compact">
     <div class="container">
-      <p>More to come — check back soon.</p>
+      <h1 class="page-title">Our Story</h1>
+    </div>
+  </section>
+
+  <section class="story-text-section">
+    <div class="container story-text">
+      <div class="story-entry">
+        <h2 class="section-eyebrow">Graeme:</h2>
+        <p>Our story starts in the fall of 2014 at the University of Manitoba, in of all places, a film studies class. We sat close to each other, though I'll admit I didn't notice Alex much at the time. Turns out she was using my height as cover, dozing off behind me because the prof couldn't see her.</p>
+        <p>Our paths crossed again on a university intramural volleyball team, where we ended up as a dynamic duo on the court: she'd set it up, I'd spike it down. I wasn't even allowed to jump in the front row, and we still made it work. Looking back, that was an amazing preview of our whole relationship.</p>
+      </div>
+
+      <div class="story-entry">
+        <h2 class="section-eyebrow">Alex:</h2>
+        <p>I noticed Graeme right away and had a crush on him from day one. So naturally, I did what any reasonable person would do: I started bringing snacks for the volleyball team after games. Cookies, usually. The plan was simple, feed the team, keep Graeme around a little longer, and maybe get to talk to him. It did not work nearly as well as I'd hoped. He was a little oblivious.</p>
+        <p>Eventually we started talking on Facebook Messenger, and slowly it dawned on him that I might actually be interested. He asked me out, and the rest is history.</p>
+      </div>
+
+      <div class="story-entry">
+        <h2 class="section-eyebrow">Graeme:</h2>
+        <p>I remember it a little differently. Those cookies got my attention instantly. I just assumed Alex was a great baker and left it there, no further questions asked. We started dating not long after, and we've been best friends ever since.</p>
+        <p>Funny enough, once we started dating, the cookies mysteriously stopped. We've been together more than 11 years now. Turns out when you're busy building a life together, a wedding can wait.</p>
+      </div>
+
+      <div class="story-entry">
+        <h2 class="section-eyebrow">Alex:</h2>
+        <p>From there, life moved fast in the best way. We both graduated from University and worked a variety of jobs, moved into an apartment together in late 2017, bought our house in 2019, and in 2020 welcomed our puppy Pluto, a Bichon Poodle who runs the household more than either of us.</p>
+      </div>
+
+      <div class="story-entry">
+        <h2 class="section-eyebrow">Graeme:</h2>
+        <p>We've travelled the world together, first for fun, then for work too, since these days we're both running The Canadian Jetsetter full time. We've built a few businesses side by side along the way, and there's something pretty great about never having to ask anyone for time off.</p>
+      </div>
+
+      <div class="story-entry">
+        <h2 class="section-eyebrow">Alex:</h2>
+        <p>The catch is we end up in the most incredible places and then spend half the trip working and being glued to our laptops and phones. Worth it, but I see the irony.</p>
+      </div>
+
+      <div class="story-entry">
+        <h2 class="section-eyebrow">Alex &amp; Graeme:</h2>
+        <p>We can't wait to celebrate with you in Winnipeg at the Fort Garry Hotel on July 31, 2027. It's home, and we can't wait to have all of our family and friends in one place.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="photo-carousel-section">
+    <div class="photo-carousel photo-carousel--landscape" data-carousel aria-label="Horizontal photos of Alex and Graeme">
+      <div class="carousel-viewport">
+        <ul class="carousel-track" role="list">
+          <li class="carousel-slide"><img src="../assets/photos/couple/20260626_123621.jpg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/43241225_10155612759002382_1732626894249000960_n.jpg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/468400625_10160155961712382_8677580454408234199_n.jpg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/468446343_10160208512657382_6363504226087799002_n.jpg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/468674689_10161965680990270_8572091493512602106_n.jpg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/505464844_10160854672332382_5010605107973805013_n.jpg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/557605977_24574362928853361_1433717496794380950_n.jpg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_1548.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_2438.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_2515.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_2718.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_3145.JPG" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/468973273_10160296494337382_7446436663171917684_n.jpg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_0365.JPG" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_0862.JPG" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_1256.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_1437.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_1630.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_1664.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_2042.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_2110.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_3465.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_3602.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_4222.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_6680.JPG" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_8615.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_9429.JPG" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_9734.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_0070.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_0487.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_4245.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_5942.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+          <li class="carousel-slide"><img src="../assets/photos/couple/IMG_6465.jpeg" alt="Alex and Graeme" loading="lazy"></li>
+        </ul>
+      </div>
+      <button type="button" class="carousel-arrow carousel-arrow-prev" aria-label="Previous photo">&#10094;</button>
+      <button type="button" class="carousel-arrow carousel-arrow-next" aria-label="Next photo">&#10095;</button>
+      <div class="carousel-dots" role="tablist" aria-label="Photo navigation"></div>
     </div>
   </section>
 
   <footer class="site-footer">
     <div class="container">
-      <img src="../assets/icons/monogram.png" alt="A&amp;G" class="footer-monogram" width="56" height="56">
+
+      <img
+        src="../assets/icons/monogram.png"
+        alt="Alex and Graeme monogram"
+        class="footer-monogram"
+        width="56"
+        height="56"
+      >
       <p class="footer-names">Alex &amp; Graeme</p>
       <p class="footer-date">July 31, 2027 &middot; Winnipeg, Manitoba</p>
+
       <nav class="footer-nav" aria-label="Footer navigation">
         <a href="our-story.html">Our Story</a>
-        <a href="wedding-party.html">Wedding Party</a>
-        <a href="schedule.html">Schedule</a>
+        <!-- <a href="wedding-party.html">Wedding Party</a> -->
+        <!-- <a href="schedule.html">Schedule</a> -->
         <a href="travel.html">Travel &amp; Stay</a>
-        <a href="registry.html">Registry</a>
-        <a href="things-to-do.html">Things To Do</a>
+        <!-- <a href="registry.html">Registry</a> -->
+        <!-- <a href="things-to-do.html">Things To Do</a> -->
         <a href="faq.html">FAQs</a>
         <a href="stay-in-touch.html">Stay in Touch</a>
-        <a href="rsvp.html">RSVP</a>
+        <!-- <a href="rsvp.html">RSVP</a> -->
       </nav>
+
       <p class="footer-copy">Made with love &middot; &copy; 2027 Alex &amp; Graeme</p>
     </div>
   </footer>
 
   <script src="../js/nav.js"></script>
+  <script src="../js/carousel.js"></script>
 
 </body>
 </html>

@@ -447,6 +447,17 @@
   .countdown-item {
     padding: 1.25rem 1.5rem;
   }
+
+  /* Mobile nav dropdown has a dark background regardless of scroll state,
+     so links must stay light even before .site-nav gets the .scrolled class. */
+  .nav-menu li:not(.nav-rsvp) a {
+    color: var(--ivory);
+  }
+
+  .nav-menu li:not(.nav-rsvp) a:hover,
+  .nav-menu li:not(.nav-rsvp) a.active {
+    color: var(--dusty-rose);
+  }
 }
 
 @media (max-width: 600px) {

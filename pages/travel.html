@@ -9,27 +9,50 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="../css/styles.css">
   <style>
-    .placeholder-section {
-      padding: var(--section-pad) 0;
-      background-color: var(--warm-cream);
-      min-height: 400px;
+    .page-content > .container > p {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.85;
+      color: var(--charcoal);
+    }
+
+    .page-hero--travel {
+      background-color: var(--ivory);
+      padding-bottom: calc(5rem / 3);
+    }
+
+    .page-hero--travel::after {
+      display: none;
+    }
+
+    .page-hero--travel + .page-content {
+      padding-top: calc(var(--section-pad) / 3);
+    }
+
+    .hero-illustration-wrap {
+      position: relative;
+      min-height: 280px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .placeholder-section p {
-      font-family: var(--font-body);
-      font-style: italic;
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--charcoal);
+    .hero-illustration-wrap .hero-illustration {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 280px;
+      height: auto;
       opacity: 0.5;
-      text-align: center;
+      z-index: 0;
+      pointer-events: none;
     }
 
-    .monogram-btn:hover {
-      filter: brightness(0) saturate(100%) invert(72%) sepia(18%) saturate(600%) hue-rotate(314deg) brightness(98%);
+    .hero-illustration-wrap .page-title {
+      position: relative;
+      z-index: 1;
     }
   </style>
 </head>
@@ -37,7 +60,7 @@
 
   <nav class="site-nav" id="site-nav">
     <div class="nav-container">
-      <a href="../index.html" class="nav-home" aria-label="Home"><img src="../assets/icons/monogram.png" alt="" class="monogram-btn" style="filter: brightness(0) invert(1); transition: filter 0.2s ease;"></a>
+      <a href="../index.html" class="nav-home" aria-label="Home"><img src="../assets/icons/monogram.png" alt="" class="monogram-btn"></a>
 <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -55,41 +78,51 @@
     </div>
   </nav>
 
-  <section class="page-hero">
+  <section class="page-hero page-hero--travel">
     <div class="container">
-      <span class="section-eyebrow">Getting There</span>
-      <h1 class="page-title">Travel &amp; Stay</h1>
+      <div class="hero-illustration-wrap">
+        <img src="../assets/icons/FG hotel 2.png" alt="" class="hero-illustration" aria-hidden="true">
+        <h1 class="page-title">Travel &amp; Stay</h1>
+      </div>
       <div class="ornament-divider" aria-hidden="true">
         <span class="line"></span>
         <span class="gem">◆ ◆ ◆</span>
         <span class="line"></span>
       </div>
-      <p class="page-subtitle">Coming soon</p>
     </div>
   </section>
 
-  <section class="placeholder-section">
+  <section class="page-content">
     <div class="container">
-      <p>More to come — check back soon.</p>
+      <p>More details coming soon. We're working on a group block rate at the Fort Garry Hotel, plus we'll have a few other accommodation options available. Check back here for pricing and booking details, and we'll send out an email update when everything's ready.</p>
     </div>
   </section>
 
   <footer class="site-footer">
     <div class="container">
-      <img src="../assets/icons/monogram.png" alt="A&amp;G" class="footer-monogram" width="56" height="56">
+
+      <img
+        src="../assets/icons/monogram.png"
+        alt="Alex and Graeme monogram"
+        class="footer-monogram"
+        width="56"
+        height="56"
+      >
       <p class="footer-names">Alex &amp; Graeme</p>
       <p class="footer-date">July 31, 2027 &middot; Winnipeg, Manitoba</p>
+
       <nav class="footer-nav" aria-label="Footer navigation">
         <a href="our-story.html">Our Story</a>
-        <a href="wedding-party.html">Wedding Party</a>
-        <a href="schedule.html">Schedule</a>
+        <!-- <a href="wedding-party.html">Wedding Party</a> -->
+        <!-- <a href="schedule.html">Schedule</a> -->
         <a href="travel.html">Travel &amp; Stay</a>
-        <a href="registry.html">Registry</a>
-        <a href="things-to-do.html">Things To Do</a>
+        <!-- <a href="registry.html">Registry</a> -->
+        <!-- <a href="things-to-do.html">Things To Do</a> -->
         <a href="faq.html">FAQs</a>
         <a href="stay-in-touch.html">Stay in Touch</a>
-        <a href="rsvp.html">RSVP</a>
+        <!-- <a href="rsvp.html">RSVP</a> -->
       </nav>
+
       <p class="footer-copy">Made with love &middot; &copy; 2027 Alex &amp; Graeme</p>
     </div>
   </footer>
