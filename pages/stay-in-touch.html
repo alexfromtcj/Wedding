@@ -35,6 +35,10 @@
       margin: 0 auto;
     }
 
+    .sit-intro p + p {
+      margin-top: 1.5rem;
+    }
+
     .form-group {
       margin-bottom: 1.75rem;
     }
@@ -68,6 +72,37 @@
 
     .form-group input:focus {
       border-color: var(--burgundy);
+    }
+
+    .form-group textarea {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      background-color: var(--warm-cream);
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 0;
+      appearance: none;
+      -webkit-appearance: none;
+      outline: none;
+      resize: vertical;
+      transition: border-color 0.2s;
+    }
+
+    .form-group textarea:focus {
+      border-color: var(--burgundy);
+    }
+
+    .char-counter {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: var(--charcoal);
+      opacity: 0.5;
+      text-align: right;
+      margin-top: 0.4rem;
     }
 
     .form-submit {
@@ -172,10 +207,14 @@
 
         <div class="sit-intro">
           <p>
-            If you've received our save the date, thank you — it means the world
-            that you'll be part of our day. Leave us your details below and we'll
-            be in touch with everything you need: the official invitation, meal
-            choices, schedule, and more.
+            We are happy you have received our Save the Date. It would mean the
+            world to us if you could be part of our day. Leave us your details
+            below and we'll be in touch with everything you need: the official
+            invitation, meal choices, schedule, and more.
+          </p>
+          <p>
+            If you already know you won't be able to make it, you're welcome
+            to let us know now.
           </p>
         </div>
 
@@ -194,6 +233,12 @@
           <div class="form-group">
             <label for="phone">Phone Number</label>
             <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+1 (204) 000-0000">
+          </div>
+
+          <div class="form-group">
+            <label for="notes">Notes</label>
+            <textarea id="notes" name="notes" maxlength="1000" placeholder="Anything you'd like us to know..." rows="4"></textarea>
+            <span class="char-counter" id="notes-counter">0 / 1000</span>
           </div>
 
           <div class="form-submit">
@@ -250,6 +295,14 @@
     (function () {
       var form = document.getElementById('sit-form');
       var thankyou = document.getElementById('sit-thankyou');
+      var notes = document.getElementById('notes');
+      var notesCounter = document.getElementById('notes-counter');
+
+      if (notes && notesCounter) {
+        notes.addEventListener('input', function () {
+          notesCounter.textContent = notes.value.length + ' / ' + notes.getAttribute('maxlength');
+        });
+      }
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();

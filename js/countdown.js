@@ -1,6 +1,6 @@
 (function () {
-  // July 31, 2027 — ceremony begins 4:00 PM CDT (UTC-5)
-  var wedding = new Date('2027-07-31T16:00:00-05:00');
+  // July 31, 2027 — ceremony begins 5:00 PM CDT (UTC-5)
+  var wedding = new Date('2027-07-31T22:00:00Z');
 
   var els = {
     days:    document.getElementById('days'),
