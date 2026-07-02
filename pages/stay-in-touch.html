@@ -11,6 +11,7 @@
   <style>
     .sit-section {
       padding: var(--section-pad) 0;
+      padding-top: calc(var(--section-pad) / 2);
       background-color: var(--ivory);
     }
 
@@ -52,6 +53,35 @@
       text-transform: uppercase;
       color: var(--charcoal);
       margin-bottom: 0.6rem;
+    }
+
+    .required-asterisk {
+      color: var(--burgundy);
+    }
+
+    .form-required-note {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 0.8rem;
+      color: var(--charcoal);
+      opacity: 0.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .field-error {
+      display: none;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: var(--burgundy);
+      margin-top: 0.5rem;
+    }
+
+    .form-group.has-error input {
+      border-color: var(--burgundy);
+    }
+
+    .form-group.has-error .field-error {
+      display: block;
     }
 
     .form-group input {
@@ -161,7 +191,10 @@
 
     @media (max-width: 600px) {
       .sit-section {
-        padding: var(--section-pad) 1.25rem;
+        padding-top: calc(var(--section-pad) / 2);
+        padding-bottom: var(--section-pad);
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
       }
     }
   </style>
@@ -216,18 +249,25 @@
             If you already know you won't be able to make it, you're welcome
             to let us know now.
           </p>
+          <p>
+            For general questions you can email us at <a href="mailto:alexandgraeme2027@gmail.com" style="color:#3e0008; text-decoration:none; border-bottom: 1px solid #3e0008;">alexandgraeme2027@gmail.com</a>
+          </p>
         </div>
 
-        <form id="sit-form" action="https://formspree.io/f/PLACEHOLDER" method="POST" novalidate>
+        <form id="sit-form" action="https://formspree.io/f/mpqgojwp" method="POST" novalidate>
 
-          <div class="form-group">
-            <label for="full-name">Full Name</label>
+          <p class="form-required-note"><span class="required-asterisk">*</span> Required fields</p>
+
+          <div class="form-group" id="full-name-group">
+            <label for="full-name">Full Name <span class="required-asterisk">*</span></label>
             <input type="text" id="full-name" name="full_name" required autocomplete="name" placeholder="Your full name">
+            <span class="field-error">This field is required</span>
           </div>
 
-          <div class="form-group">
-            <label for="email">Email Address</label>
+          <div class="form-group" id="email-group">
+            <label for="email">Email Address <span class="required-asterisk">*</span></label>
             <input type="email" id="email" name="email" required autocomplete="email" placeholder="your@email.com">
+            <span class="field-error">This field is required</span>
           </div>
 
           <div class="form-group">
@@ -297,6 +337,10 @@
       var thankyou = document.getElementById('sit-thankyou');
       var notes = document.getElementById('notes');
       var notesCounter = document.getElementById('notes-counter');
+      var fullNameInput = document.getElementById('full-name');
+      var emailInput = document.getElementById('email');
+      var fullNameGroup = document.getElementById('full-name-group');
+      var emailGroup = document.getElementById('email-group');
 
       if (notes && notesCounter) {
         notes.addEventListener('input', function () {
@@ -304,8 +348,31 @@
         });
       }
 
+      fullNameInput.addEventListener('input', function () {
+        fullNameGroup.classList.remove('has-error');
+      });
+
+      emailInput.addEventListener('input', function () {
+        emailGroup.classList.remove('has-error');
+      });
+
       form.addEventListener('submit', function (e) {
         e.preventDefault();
+
+        var hasError = false;
+
+        if (!fullNameInput.value.trim()) {
+          fullNameGroup.classList.add('has-error');
+          hasError = true;
+        }
+
+        if (!emailInput.value.trim()) {
+          emailGroup.classList.add('has-error');
+          hasError = true;
+        }
+
+        if (hasError) return;
+
         var data = new FormData(form);
         fetch(form.action, {
           method: 'POST',

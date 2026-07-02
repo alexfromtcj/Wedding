@@ -11,6 +11,9 @@
     var dotsEl = carousel.querySelector('.carousel-dots');
     var prevBtn = carousel.querySelector('.carousel-arrow-prev');
     var nextBtn = carousel.querySelector('.carousel-arrow-next');
+    var progressFill = carousel.parentElement
+      ? carousel.parentElement.querySelector('.carousel-progress-bar-fill')
+      : null;
 
     if (!track || slides.length === 0) return;
 
@@ -59,6 +62,12 @@
         dot.classList.toggle('is-active', i === current);
         dot.setAttribute('aria-selected', String(i === current));
       });
+
+      if (progressFill) {
+        var total = maxIndex + 1;
+        var progress = total > 1 ? (current / (total - 1)) * 100 : 100;
+        progressFill.style.width = progress + '%';
+      }
     }
 
     function goTo(index) {
