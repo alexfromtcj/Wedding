@@ -59,12 +59,13 @@
 }
 
 html {
+  font-size: 112.5%;
   scroll-behavior: smooth;
 }
 
 body {
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   line-height: 1.75;
   color: var(--charcoal);
@@ -634,7 +635,12 @@ a {
 }
 
 .story-entry .section-eyebrow {
+  font-family: var(--font-body);
+  font-size: 1.5em;
   font-weight: bold;
+  color: var(--burgundy);
+  text-transform: none;
+  letter-spacing: normal;
 }
 
 .story-entry p {

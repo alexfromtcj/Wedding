@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Travel and accommodation information for Alex and Graeme's wedding in Winnipeg, Manitoba.">
   <title>Travel &amp; Stay — Alex &amp; Graeme · July 31, 2027</title>
+  <link rel="icon" type="image/png" href="../assets/icons/monogram.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="../css/styles.css">
@@ -16,6 +17,23 @@
       line-height: 1.85;
       color: var(--charcoal);
       text-align: center;
+    }
+
+    .page-content h2 {
+      color: var(--burgundy);
+      margin-bottom: 1rem;
+    }
+
+    .page-content .btn {
+      margin-top: 1.5rem;
+    }
+
+    .page-content--stay {
+      padding-bottom: calc(var(--section-pad) / 4);
+    }
+
+    .page-content--transport {
+      padding-top: calc(var(--section-pad) / 4);
     }
 
     .page-hero--travel {
@@ -99,9 +117,18 @@
     </div>
   </section>
 
-  <section class="page-content">
+  <section class="page-content page-content--stay">
     <div class="container">
-      <p>More details coming soon. We're working on a group block rate at the Fort Garry Hotel, plus we'll have a few other accommodation options available. Check back here for pricing and booking details, and we'll send out an email update when everything's ready.</p>
+      <h2>Stay at The Fort Garry</h2>
+      <p style="text-align: left !important;">If you are interested in staying onsite, reservations can be made through the link below at our group rate (this is a variable rate of approx. $230/night). Bookings can also be made by contacting <a href="mailto:reservations@fortgarryhotel.com">reservations@fortgarryhotel.com</a>.</p>
+      <a href="https://www.choicehotels.com/manitoba/winnipeg/ascend-hotels/cnb72?ratePlanCode=L26WED" target="_blank" rel="noopener" class="btn btn-primary">Book Your Room</a>
+    </div>
+  </section>
+
+  <section class="page-content page-content--transport">
+    <div class="container">
+      <h2>Transportation</h2>
+      <p style="text-align: left;">The Fort Garry Hotel is centrally located with easy access to Uber, Lyft, and taxis. We kindly ask that you plan ahead for a safe ride home. There will be an open bar, after all!</p>
     </div>
   </section>
 
